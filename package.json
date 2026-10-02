@@ -1,0 +1,118 @@
+{
+  "name": "rainbow-sql",
+  "displayName": "Rainbow SQL",
+  "description": "Color-code columns and values in SQL INSERT statements with matching rainbow colors, interactive column inspection, and mismatch detection.",
+  "version": "0.1.0",
+  "publisher": "rainbow-sql",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "sql",
+    "insert",
+    "rainbow",
+    "colors",
+    "database"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:sql",
+    "onLanguage:postgres",
+    "onLanguage:mysql",
+    "onLanguage:plsql",
+    "onLanguage:tsql",
+    "onLanguage:sqlite"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "rainbowSql.toggle",
+        "title": "Toggle Rainbow SQL Highlighting",
+        "category": "Rainbow SQL"
+      }
+    ],
+    "configuration": {
+      "title": "Rainbow SQL",
+      "properties": {
+        "rainbowSql.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Rainbow SQL column highlighting."
+        },
+        "rainbowSql.enableHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show column name and index on hover over values."
+        },
+        "rainbowSql.enableStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show active column under cursor in the status bar."
+        },
+        "rainbowSql.highlightMismatches": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight rows where the number of values does not match the number of columns."
+        },
+        "rainbowSql.darkColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "#E57373",
+            "#BA68C8",
+            "#64B5F6",
+            "#4DD0E1",
+            "#81C784",
+            "#DCE775",
+            "#FFD54F",
+            "#FF8A65",
+            "#A1887F",
+            "#4DB6AC"
+          ],
+          "description": "List of color hex codes to use in Dark themes."
+        },
+        "rainbowSql.lightColors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "#C62828",
+            "#6A1B9A",
+            "#1565C0",
+            "#00838F",
+            "#2E7D32",
+            "#9E9D24",
+            "#EF6C00",
+            "#D84315",
+            "#4E342E",
+            "#00695C"
+          ],
+          "description": "List of color hex codes to use in Light themes."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "compile": "tsc -p ./",
+    "test": "tsc -p ./ && mocha out/test/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.0",
+    "@types/vscode": "^1.80.0",
+    "esbuild": "^0.25.0",
+    "mocha": "^11.1.0",
+    "typescript": "^5.7.3"
+  }
+}
