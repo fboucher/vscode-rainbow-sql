@@ -19,6 +19,7 @@
     "colors",
     "database"
   ],
+  "icon": "images/icon.png",
   "main": "./dist/extension.js",
   "activationEvents": [
     "onLanguage:sql",
@@ -114,5 +115,14 @@
     "esbuild": "^0.25.0",
     "mocha": "^11.1.0",
     "typescript": "^5.7.3"
-  }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fboucher/vscode-rainbow-sql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fboucher/vscode-rainbow-sql/issues"
+  },
+  "homepage": "https://github.com/fboucher/vscode-rainbow-sql#readme"
 }

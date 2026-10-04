@@ -1,0 +1,11 @@
+.vscode/**
+src/**
+test/**
+out/**
+node_modules/**
+images/icon.svg
+sample.sql
+tsconfig.json
+**/*.map
+**/*.ts
+.gitignore
