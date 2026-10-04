@@ -75,10 +75,6 @@ export function activate(context: vscode.ExtensionContext): void {
       vscode.languages.registerHoverProvider({ language: lang }, hoverProvider)
     );
   }
-  // Also register for files named *.sql
-  context.subscriptions.push(
-    vscode.languages.registerHoverProvider({ pattern: '**/*.sql' }, hoverProvider)
-  );
 
   // Register toggle command
   context.subscriptions.push(

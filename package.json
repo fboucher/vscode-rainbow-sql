@@ -2,7 +2,7 @@
   "name": "rainbow-sql",
   "displayName": "Rainbow SQL",
   "description": "Color-code columns and values in SQL INSERT statements with matching rainbow colors, interactive column inspection, and mismatch detection.",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "publisher": "rainbow-sql",
   "engines": {
     "vscode": "^1.80.0"

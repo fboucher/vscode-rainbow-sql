@@ -6,21 +6,31 @@
 
 Rainbow SQL makes SQL `INSERT` statements easier to read by coloring each column and its corresponding values consistently. It also helps you inspect columns and spot rows with a mismatched number of values.
 
-## Screenshot
-
-> Screenshot placeholder — replace this with a screenshot of Rainbow SQL in VS Code.
+## Screenshots
 
 ![Rainbow SQL highlighting an INSERT statement in Visual Studio Code](images/screenshot.png)
 
+### Hover details
+
+Hover over a value to see its column number, name, table, and row position.
+
+![Hover popup showing column details](images/popup.png)
+
+### Mismatched column / value count detection
+
+Rows whose value count differs from the declared columns are highlighted.
+
+![Mismatched column and value count detection](images/detection.png)
+
 ## Features
 
-- **Matching column and value colors** — follow each declared column through one or more `VALUES` rows.
-- **Single-row and multi-row statements** — supports statements laid out on one line or across multiple lines.
-- **Column details on hover** — inspect the column number, name, table, and row position.
-- **Active column in the status bar** — see the current column while moving through a statement.
-- **Mismatch detection** — identify rows whose value count differs from the declared column count.
-- **Theme-aware colors** — separate palettes for light and dark themes, with customizable colors.
-- **SQL-aware parsing** — handles quoted values, comments, nested expressions, and common identifier quoting styles.
+- **Matching column and value colors**:  follow each declared column through one or more `VALUES` rows.
+- **Single-row and multi-row statements**:  supports statements laid out on one line or across multiple lines.
+- **Column details on hover**:  inspect the column number, name, table, and row position.
+- **Active column in the status bar**:  see the current column while moving through a statement.
+- **Mismatch detection**:  identify rows whose value count differs from the declared column count.
+- **Theme-aware colors**:  separate palettes for light and dark themes, with customizable colors.
+- **SQL-aware parsing**:  handles quoted values, comments, nested expressions, and common identifier quoting styles.
 
 For example, the values are colored to match their corresponding columns:
 
