@@ -6,6 +6,9 @@
 
 Rainbow SQL makes SQL `INSERT` statements easier to read by coloring each column and its corresponding values consistently. It also helps you inspect columns and spot rows with a mismatched number of values.
 
+[![Tests (main)](https://github.com/fboucher/vscode-rainbow-sql/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/fboucher/vscode-rainbow-sql/actions/workflows/tests.yml)
+[![License](https://img.shields.io/github/license/fboucher/vscode-rainbow-sql)](https://github.com/fboucher/vscode-rainbow-sql/blob/main/LICENSE)
+
 ## Screenshots
 
 ![Rainbow SQL highlighting an INSERT statement in Visual Studio Code](images/screenshot.png)
@@ -79,3 +82,7 @@ Run the automated tests with:
 ```bash
 npm test
 ```
+
+## CI and releases
+
+GitHub Actions runs the tests and build on pull requests targeting `main` or `v-next`, and when changes are pushed to either branch. To publish a release, add a repository Actions secret named `VSCE_PAT`, then create and publish a GitHub Release with a tag matching the version in `package.json` (for example, `v0.9.0`). The release workflow publishes the extension to the Visual Studio Marketplace and attaches the `.vsix` package to the GitHub Release.
